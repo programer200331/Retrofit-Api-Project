@@ -1,4 +1,3 @@
-
 package com.example.secondapiproject.models;
 
 import com.google.gson.annotations.Expose;

@@ -1,8 +1,10 @@
-package com.example.secondapiproject;
+package com.example.secondapiproject.views;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.example.secondapiproject.R;
 
 public class MainActivity extends AppCompatActivity {
 
