@@ -5,8 +5,8 @@ import com.example.secondapiproject.api.RetrofitRequests;
 
 public class ApiController {
 
-    private RetrofitRequests retrofitRequests;
     private static ApiController instance;
+    private final RetrofitRequests retrofitRequests;
 
     private ApiController() {
         retrofitRequests = RetrofitManager.getRetrofitInstance().create(RetrofitRequests.class);
@@ -17,6 +17,10 @@ public class ApiController {
             return instance = new ApiController();
         }
         return instance;
+    }
+
+    public RetrofitRequests getRetrofitRequests() {
+        return retrofitRequests;
     }
 
 }
