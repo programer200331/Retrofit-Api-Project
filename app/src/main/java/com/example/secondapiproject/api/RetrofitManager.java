@@ -2,6 +2,8 @@ package com.example.secondapiproject.api;
 
 import androidx.annotation.NonNull;
 
+import com.example.secondapiproject.shpreferances.AppSharedPrefController;
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -37,10 +39,9 @@ public class RetrofitManager {
 
                 Request.Builder builder = chain.request().newBuilder();
 
-                builder.addHeader("TOKEN", "Bearer Token");
-                builder.addHeader("ACCEPT", "application/json");
-                builder.addHeader("Content_Type", "application/json");
-                builder.addHeader("Authorization", "Bearer Token");
+                builder.addHeader("Authorization", AppSharedPrefController.getInstance().getToken());
+                builder.addHeader("Accept", "application/json");
+                builder.addHeader("Content_Type", "application/JSON");
 
                 return chain.proceed(builder.build());
             }

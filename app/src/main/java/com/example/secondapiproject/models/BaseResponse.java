@@ -11,11 +11,17 @@ public class BaseResponse<T> {
     @SerializedName("status")
     @Expose
     public Boolean status;
+
     @SerializedName("message")
     @Expose
     public String message;
+
     @SerializedName("data")
     @Expose
     public List<T> data = null;
+
+    @SerializedName("object")
+    @Expose
+    public T object = null;
 
 }
