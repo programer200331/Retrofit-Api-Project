@@ -38,10 +38,12 @@ public class RetrofitManager {
             public Response intercept(@NonNull Chain chain) throws IOException {
 
                 Request.Builder builder = chain.request().newBuilder();
-
-                builder.addHeader("Authorization", AppSharedPrefController.getInstance().getToken());
+                String token = AppSharedPrefController.getInstance().getToken();
+                if (token != null) {
+                    builder.addHeader("Authorization", token);
+                }
                 builder.addHeader("Accept", "application/json");
-                builder.addHeader("Content_Type", "application/JSON");
+                builder.addHeader("Content_Type", "application/x-www-form-urlencoded");
 
                 return chain.proceed(builder.build());
             }

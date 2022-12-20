@@ -4,7 +4,10 @@ import com.example.secondapiproject.api.RetrofitRequests;
 import com.example.secondapiproject.interfaces.ArrayResponseCallBack;
 import com.example.secondapiproject.models.BaseResponse;
 import com.example.secondapiproject.models.Categories;
+import com.example.secondapiproject.models.Countries;
 import com.example.secondapiproject.models.Users;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -17,7 +20,6 @@ public class ContentApiController {
     public ContentApiController() {
         this.retrofitRequests = ApiController.getInstance().getRetrofitRequests();
     }
-
 
     public void getUsersData(ArrayResponseCallBack<Users> callBack) {
 
@@ -55,7 +57,7 @@ public class ContentApiController {
 
                 if (response.isSuccessful() && response.body() != null) {
                     callBack.onSuccess(response.body().data);
-                }else {
+                } else {
                     callBack.onFailure("No Data");
                 }
 
@@ -66,6 +68,33 @@ public class ContentApiController {
 
                 //
 
+            }
+        });
+
+    }
+
+    public void getCountriesData(ArrayResponseCallBack<Countries> callBack) {
+
+        Call<List<Countries>> call = retrofitRequests.getCountriesData();
+        call.enqueue(new Callback<List<Countries>>() {
+            @Override
+            public void onResponse(Call<List<Countries>> call, Response<List<Countries>> response) {
+
+                if (response.isSuccessful() && response.body() != null) {
+
+                    callBack.onSuccess(response.body());
+
+                } else {
+
+                    callBack.onFailure("No Data Exists");
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Countries>> call, Throwable t) {
+                callBack.onFailure(t.getMessage());
             }
         });
 
