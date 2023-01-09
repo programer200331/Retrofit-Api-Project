@@ -78,29 +78,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(String message) {
                 Toast.makeText(MainActivity.this, "" + message, Toast.LENGTH_SHORT).show();
-                performLogout(logoutIntent);
+                performIntent(logoutIntent);
             }
 
             @Override
             public void onFailure(String message) {
                 Snackbar.make(mainBinding.getRoot(), "" + message, BaseTransientBottomBar.LENGTH_SHORT).show();
 //                if (message.equals("Unauthenticated.")) {
-//                    performLogout(logoutIntent);
+//                    performIntent(logoutIntent);
 //                }
             }
         });
 
     }
 
-    private void performLogout(Intent intent) {
+    private void performIntent(Intent intent) {
         startActivity(intent);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.main_menu, menu);
-
         return true;
     }
 
@@ -110,9 +108,11 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.log_out) {
             logout();
         } else if (item.getItemId() == R.id.to_tasks) {
-            performLogout(new Intent(getApplicationContext(), TasksActivity.class));
+            performIntent(new Intent(getApplicationContext(), TasksActivity.class));
         } else if (item.getItemId() == R.id.to_countries) {
-            performLogout(new Intent(getApplicationContext(), CountriesActivity.class));
+            performIntent(new Intent(getApplicationContext(), CountriesActivity.class));
+        } else {
+            performIntent(new Intent(getApplicationContext(), UploadImagesActivity.class));
         }
         return true;
     }

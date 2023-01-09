@@ -28,6 +28,7 @@
     <string name="toast_enter_password">كلمة المرور</string>
     <string name="toast_new_title">أدخل عنوان جديد</string>
     <string name="toast_enter_title">أدخل عنوان المهمة</string>
-    <string name="tasks">Tasks</string>
+    <string name="tasks">المهام</string>
     <string name="toast_no_internet">لا يوجد إتصال بالإنترنت</string>
+    <string name="images">الصور</string>
 </resources>

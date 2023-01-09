@@ -6,21 +6,25 @@
         android:id="@+id/to_countries"
         android:icon="@drawable/ic_countries"
         android:title="Categories"
-        app:showAsAction="ifRoom"
-        />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/to_tasks"
-        android:title="@string/tasks"
         android:icon="@drawable/ic_tasks"
-        app:showAsAction="ifRoom"
-        />
+        android:title="@string/tasks"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/log_out"
-        android:title="@string/logout"
         android:icon="@drawable/ic_login_out"
-        app:showAsAction="ifRoom"
-        />
+        android:title="@string/logout"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/to_images"
+        android:icon="@drawable/ic_upload"
+        android:title="@string/images"
+        app:showAsAction="ifRoom" />
+
 
 </menu>

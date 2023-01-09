@@ -13,7 +13,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /*Model : Tasks */
-public class Tasks extends BaseModel {
+public class Tasks extends BaseControllerModels {
 
     @SerializedName("id")
     @Expose

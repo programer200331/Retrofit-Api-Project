@@ -120,7 +120,6 @@ public class TasksActivity extends AppCompatActivity implements ViewHolderListen
 
     @Override
     public void onDeleteAction(int position) {
-
         tasksApiController.deleteTask(tasksArray.get(position), new ApiProcessCallBack() {
             @Override
             public void onSuccess(String message) {
@@ -128,7 +127,6 @@ public class TasksActivity extends AppCompatActivity implements ViewHolderListen
                 adapter.notifyItemRemoved(position);
                 adapter.notifyItemRangeRemoved(position, tasksArray.size());
                 adapter.notifyItemRangeChanged(position, tasksArray.size());
-//                Toast.makeText(TasksActivity.this, "" + message, Toast.LENGTH_SHORT).show();
             }
 
             @Override

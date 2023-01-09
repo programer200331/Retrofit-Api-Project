@@ -30,4 +30,5 @@
     <string name="toast_enter_title">Please Enter Title</string>
     <string name="tasks">Tasks</string>
     <string name="toast_no_internet">NO Internet Connection</string>
+    <string name="images">Images</string>
 </resources>

@@ -44,8 +44,7 @@ public interface RetrofitRequests {
 
     @FormUrlEncoded
     @POST("students/auth/register")
-    Call<BaseResponse> register(@Field("full_name") String fullName, @Field("email") String email
-            , @Field("password") String password, @Field("gender") String gender);
+    Call<BaseResponse> register(@Field("full_name") String fullName, @Field("email") String email, @Field("password") String password, @Field("gender") String gender);
 
     @GET("students/auth/logout")
     Call<BaseResponse> logout();
@@ -56,7 +55,7 @@ public interface RetrofitRequests {
 
     @Multipart
     @POST("student/images")
-    Call<BaseResponse> uploadImage(@Part MultipartBody.Part image);
+    Call<BaseResponse> uploadImage(@Part MultipartBody.Part imageFile);
 
     @GET("student/images")
     Call<BaseResponse<StudentImages>> getStudentImages();

@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
 
-class BaseModel {
+class BaseControllerModels {
 
     String getErrorResponse(byte[] bytes) {
         String errorResponse = new String(bytes, StandardCharsets.UTF_8);
